@@ -19,6 +19,6 @@ _Chạy lệnh:_ node index.js để tiến hành khởi động Proxy Backend
 _Chạy lệnh:_ npm start để tiến hành khởi động website
 
 # CÁCH TRIỂN KHAI WEBSITE
-
-- Ở Proxy Backend (Thư mục proxy_be) chạy lệnh: _node index.js_ để khởi động Proxy backend
-- Ở giao diện website chạy lệnh _npm start_ để khởi động website => Xem thành quả
+- sau khi tiến hành clone về thì bật terninal lên chạy lệnh npm install ở 2 forder để tiến hành cài các package liên quan
+- Ở Proxy Backend (Thư mục proxy_be) mở terninal và chạy lệnh: _node index.js_ để khởi động Proxy backend
+- Ở giao diện website (Thư mục crawling_f1) mở terninal và chạy lệnh _npm start_ để khởi động website => Xem thành quả
