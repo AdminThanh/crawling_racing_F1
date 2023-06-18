@@ -2,7 +2,7 @@ import CrawlingPage from "../pages/crawling";
 
 export const routes = [
     {
-        path: '/',
+        path: '/*',
         element: CrawlingPage,
     }
 ]

@@ -1,4 +1,6 @@
 .list__typename {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   border: 1px solid #0d233a;
   border-radius: 20px;
   padding: 20px;
@@ -17,6 +19,32 @@
       a {
         text-decoration: none;
       }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .list__typename {
+    grid-template-columns: repeat(2, 1fr);
+    ul {
+      height: 200px;
+      box-shadow: 0px 0px 1px 0px #314a83;
+      margin: 10px 5px;
+      border-radius: 4px;
+    }
+  }
+}
+
+@media (max-width: 568px) {
+  .list__typename {
+    padding: 5px 0px;
+    grid-template-columns: repeat(1, 1fr);
+   
+    ul {
+      height: 200px;
+      box-shadow: 0px 0px 1px 0px #314a83;
+      margin: 10px 5px;
+      border-radius: 4px;
     }
   }
 }

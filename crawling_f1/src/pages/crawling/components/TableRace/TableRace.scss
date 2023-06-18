@@ -1,0 +1,51 @@
+.tableRace table {
+  thead {
+    font-weight: bold;
+    width: 100%;
+  }
+  tbody tr {
+    &:first-child td {
+      padding-top: 30px;
+    }
+  }
+  tbody td {
+    padding: 10px 0;
+    color: #e3e3e3;
+    a {
+      // text-decoration: none;
+    }
+  }
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #121a2c;
+  border: 1px solid #0d233a;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 991px) {
+  .tableRace {
+    table {
+      overflow-x: auto;
+      display: block;
+      padding: 20px 10px;
+      tr td {
+        padding-right: 15px;
+        white-space: nowrap;
+        font-size: 17px;
+      }
+      thead {
+        td {
+          padding: 0;
+          white-space: nowrap;
+        }
+      }
+      tbody {
+        td {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

@@ -1,123 +1,35 @@
 import React from "react";
 import "./NameType.scss";
-import { Link } from "react-router-dom";
-const NameType = () => {
+import { Link, NavLink } from "react-router-dom";
+import { log } from "console";
+import { empty } from "cheerio/lib/api/manipulation";
+import {IRace} from '../../index'
+interface Props {
+  rowHeadings: IRace[];
+}
+
+const NameType: React.FC<Props> = ({ rowHeadings }) => {
   return (
     <div className="list__typename">
-      <ul>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-        <li>
-          <Link to={"/"}>12423234</Link>
-        </li>
-      </ul>
+      {rowHeadings.map((item, index) => {
+        if (Object.values(item).length > 0) {
+          return (
+            <ul key={index}>
+              {Object.values(item).map((data, dataIndex) => {
+                if (data.text) {
+                  return (
+                    <li key={dataIndex}>
+                      <NavLink to={data?.href as string}>{data.text}</NavLink>
+                    </li>
+                  );
+                }
+              })}
+            </ul>
+          );
+        } else {
+          return null;
+        }
+      })}
     </div>
   );
 };
