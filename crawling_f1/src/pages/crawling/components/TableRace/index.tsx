@@ -1,12 +1,8 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import "./TableRace.scss";
+import { IRace } from "../../index";
 
-interface IRace {
-  [key: string]: {
-    text: string;
-    href?: string;
-  };
-}
 interface Props {
   rowRaces: IRace[];
   rowTitleRace: IRace[];
